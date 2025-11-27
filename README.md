@@ -75,7 +75,7 @@ A rough diagram:
 ## Example CLI Query
 
 Below is an example of the agent retrieving similar songs for a rock track:
-![CLI query](results/simulation_output/query_result_report_example.txt)
+![CLI query](results/simulation_output/query_result.png)
 
 
 
