@@ -1,0 +1,16 @@
+🎧 Query Song: /Users/lilahdicker/Music_IR_finalproj/sound_fingerprint_project/data/songs/rock/rock.00077.au
+🟡 Actual Genre: rock
+🔮 Predicted Genre: hiphop
+
+🧬 Cluster ID: 9
+📊 Cluster Archetype (Top Genres):
+   - metal: 22 songs
+   - hiphop: 21 songs
+   - reggae: 14 songs
+
+🎧 More Songs from Same Cluster (Top-5 by Similarity):
+   - /Users/lilahdicker/Music_IR_finalproj/sound_fingerprint_project/data/songs/hiphop/hiphop.00072.au — Genre: hiphop — Similarity: 0.9952
+   - /Users/lilahdicker/Music_IR_finalproj/sound_fingerprint_project/data/songs/hiphop/hiphop.00050.au — Genre: hiphop — Similarity: 0.9920
+   - /Users/lilahdicker/Music_IR_finalproj/sound_fingerprint_project/data/songs/hiphop/hiphop.00034.au — Genre: hiphop — Similarity: 0.9915
+   - /Users/lilahdicker/Music_IR_finalproj/sound_fingerprint_project/data/songs/disco/disco.00010.au — Genre: disco — Similarity: 0.9898
+   - /Users/lilahdicker/Music_IR_finalproj/sound_fingerprint_project/data/songs/disco/disco.00083.au — Genre: disco — Similarity: 0.9879
