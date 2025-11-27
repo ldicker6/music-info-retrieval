@@ -1,0 +1,12 @@
+numpy
+scipy
+librosa
+pandas
+matplotlib
+seaborn
+scikit-learn
+networkx
+yt-dlp
+pydub
+ffmpeg-python
+tqdm
