@@ -5,18 +5,21 @@ It uses audio feature extraction, unsupervised clustering, and a graph-based
 influence model to group songs and suggest similar tracks, going beyond simple
 genre labels.
 
-## 1. Motivation
+**Tech Stack:** Python, Librosa, Scikit-Learn, NetworkX, Matplotlib, Seaborn, yt-dlp, pydub, FFmpeg  
+**Skills Demonstrated:** Machine Learning, Signal Processing (DSP), Graph Algorithms, Data Visualization, Systems Design, CLI Tool Development
 
-Traditional music recommenders rely heavily on metadata (especially genre).
-In this project, I wanted to see how far we could get by ignoring tags and
-looking only at how the audio *sounds*.
+## Motivation
 
-Questions I explored:
+Traditional music recommenders rely heavily on metadata- especially genre, artist, and mood tags. But listeners don't experience music as labels; they experience timbre, rhythm, tempo, harmony, and energy. I was curious what would happen if we ignored metadata completely and tried to group and recommend songs based only on how they *sound*.
 
-- Do unsupervised clusters of audio features line up with human created genre labels?
-- Where do they diverge, and what does that say about cross-genre similarity?
-- Can we build an "agent" that, given a song (or YouTube link), guesses its
-  genre/cluster and recommends similar tracks?
+This project explores three questions:
+- Do unsupervised clusters of audio features naturally align with human created genre labels?
+- Where do they diverge, and what does that say about cross genre similarity?
+- Can a retrieval agent recommend music by acoustic similarity rather than by genre category?
+
+The result is a content-based music exploration tool that extracts audio features, clusters songs in feature space, builds a similarity graph, and recommends similar tracks via a CLI interface, including support for YouTube URLs.
+
+In short, this project was an opportunity to combine my interests in machine learning, signal processing, and music, and to explore how algorithms can capture something as subjective as similarity.
 
 ## 2. High-Level Architecture
 
@@ -69,6 +72,22 @@ A rough diagram:
 - Colors indicate the true genre label.
 - Local neighborhoods capture similarity better than strict genre boundaries.
 
+## Example CLI Query
+
+Below is an example of the agent retrieving similar songs for a rock track:
+![CLI query](results/simulation_output/query_result_report_example.txt)
+
+
+
+## What I Learned
+- Built a complete ML pipeline end-to-end (not just model training)
+- Hands-on experience with digital signal processing and low-level audio features
+- Why genre classification is fundamentally limited compared to similarity search
+- Working with large Python dependency stacks and reproducibility tools (requirements.txt)
+- Interpreting unsupervised learning using confusion matrices and t-SNE visualizations
+- Applying graph theory (PageRank) to ranking and recommendation problems
+- Designing a CLI-based “agent” interface for real human interaction
+
 ## 5. Running the Project
 
 > **Note:** Because of dataset magnitude and licensing, audio files are not included.
@@ -110,7 +129,7 @@ Future ideas:
 
 - replace hand-crafted features with embeddings from a pretrained model
 - use a more robust evaluation set
-- deploy a small web UI instead of a pure CLI.
+-  deploy a small web interface with an interactive t-SNE song explorer and cluster visualization, backed by a cached fingerprint index for real-time recommendations.
 
 ## 7. Repository Structure
 ```bash
