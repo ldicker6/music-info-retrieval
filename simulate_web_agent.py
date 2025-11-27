@@ -43,19 +43,26 @@ cluster_matches = [
     (sid, sim) for sid, sim in find_top_similar_songs_from_index(held_out_fp, index)
     if cluster_map.get(sid) == cluster_id and sid != held_out_song
 ][:5]
-# ✏️ Write report
+#format and save report
+report_lines = []
+report_lines.append("=" * 60)
+report_lines.append(f"🎧  Query: {Path(held_out_song).name}")
+report_lines.append(f"   • True genre: {held_out_genre}")
+report_lines.append(f"   • Predicted genre: {predicted_genre}\n")
+
+report_lines.append(f"🧬  Cluster ID: {cluster_id}")
+report_lines.append("📊  Cluster composition (top genres):")
+for genre, count in archetype:
+    report_lines.append(f"   • {genre:<10} {count} songs")
+
+report_lines.append("\n🔎  Top-5 similar tracks (by cosine similarity):")
+for rank, (sid, score) in enumerate(cluster_matches, start=1):
+    genre = feature_store[sid]["genre"]
+    report_lines.append(f"   {rank}) {Path(sid).name:<30}  genre: {genre:<10}  similarity: {score:.4f}")
+
+report_lines.append("=" * 60)
 report_path = RESULT_DIR / "query_result_report_example.txt"
 with open(report_path, "w") as f:
-    f.write(f"Query Song: {held_out_song}\n")
-    f.write(f"Actual Genre: {held_out_genre}\n")
-    f.write(f"predicted Genre: {predicted_genre}\n\n")
-    f.write(f"cluster ID: {cluster_id}\n")
-    f.write(f"cluster Archetype (Top Genres):\n")
-    for g, c in archetype:
-        f.write(f"   - {g}: {c} songs\n")
-    f.write("\nmore Songs from Same Cluster (Top-5 by Similarity):\n")
-    for sid, sim in cluster_matches:
-        genre = feature_store[sid]["genre"]
-        f.write(f"   - {sid} — Genre: {genre} — Similarity: {sim:.4f}\n")
+    f.write("\n".join(report_lines))
 
-print(f"simulation complete and saved to {report_path}")
+print(f"Simulation complete. report saved to {report_path}")

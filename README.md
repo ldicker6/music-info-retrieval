@@ -8,7 +8,7 @@ genre labels.
 **Tech Stack:** Python, Librosa, Scikit-Learn, NetworkX, Matplotlib, Seaborn, yt-dlp, pydub, FFmpeg  
 **Skills Demonstrated:** Machine Learning, Signal Processing (DSP), Graph Algorithms, Data Visualization, Systems Design, CLI Tool Development
 
-## Motivation
+## 1. Motivation
 
 Traditional music recommenders rely heavily on metadata- especially genre, artist, and mood tags. But listeners don't experience music as labels; they experience timbre, rhythm, tempo, harmony, and energy. I was curious what would happen if we ignored metadata completely and tried to group and recommend songs based only on how they *sound*.
 
