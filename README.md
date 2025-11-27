@@ -71,15 +71,16 @@ A rough diagram:
 
 ## 5. Running the Project
 
-> **Note:** Because of dataset licensing, audio files are not included.
+> **Note:** Because of dataset magnitude and licensing, audio files are not included.
 > You can recreate the structure with your own 10-genre dataset under `data/songs/genre/`.
 
-1. Install dependencies:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
-Train the offline agent:
 ```
+
+Train the offline agent:
 ```bash
 Copy code
 python main.py
@@ -88,15 +89,17 @@ runs clustering, and saves metadata under results/.
 ```
 Query with a local audio file:
 
-bash
-Copy code
+```bash
 python query_interface.py path/to/song.wav
-Query with a YouTube URL:
+```
 
-bash
-Copy code
+Query with a YouTube URL:
+```bash
 python query_youtube.py "https://www.youtube.com/watch?v=...."
+```
+
 6. Limitations & Future Work
+
 The system uses relatively simple summary statistics of audio features.
 
 Genre labels do not perfectly align with cluster structure, which is expected:
@@ -104,15 +107,12 @@ musical similarity is continuous and can cross genre boundaries.
 
 Future ideas:
 
-replace hand-crafted features with embeddings from a pretrained model
-
-use a more robust evaluation set
-
-deploy a small web UI instead of a pure CLI.
+- replace hand-crafted features with embeddings from a pretrained model
+- use a more robust evaluation set
+- deploy a small web UI instead of a pure CLI.
 
 7. Repository Structure
-text
-Copy code
+```bash
 .
 ├── audio_processing.py
 ├── fingerprint_index.py
@@ -124,7 +124,8 @@ Copy code
 ├── main.py
 ├── config.py
 ├── data/
-│   └── songs/            # one folder per genre (user-provided audio)
+│   └── songs/           #one folder per genre
 └── results/
     ├── confusion_matrix.png
     └── tsne_map.png
+```
