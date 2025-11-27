@@ -84,9 +84,10 @@ Train the offline agent:
 ```bash
 Copy code
 python main.py
+```
 This computes features, builds the fingerprint index and influence graph,
 runs clustering, and saves metadata under results/.
-```
+
 Query with a local audio file:
 
 ```bash
@@ -98,7 +99,7 @@ Query with a YouTube URL:
 python query_youtube.py "https://www.youtube.com/watch?v=...."
 ```
 
-6. Limitations & Future Work
+## 6. Limitations & Future Work
 
 The system uses relatively simple summary statistics of audio features.
 
@@ -111,7 +112,7 @@ Future ideas:
 - use a more robust evaluation set
 - deploy a small web UI instead of a pure CLI.
 
-7. Repository Structure
+## 7. Repository Structure
 ```bash
 .
 ├── audio_processing.py
